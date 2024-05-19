@@ -1,0 +1,45 @@
+
+body{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container{
+    background-color: aqua;
+    background-color: black;
+    max-width: 500px;
+    position: absolute;
+    overflow: hidden;
+}
+
+#display{
+    padding: 30px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 500;
+    width: 100%;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.709);
+}
+
+.keys{
+    display: grid;
+    grid-template-columns:repeat(4,1fr);
+    gap: 10px;
+    padding: 30px;
+}
+
+button{
+    height: 5rem;
+    width: 5rem;
+    border: none;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+    background-color: hsl(0, 0%, 35%);
+}

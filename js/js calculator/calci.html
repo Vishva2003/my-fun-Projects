@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calci.css">
+</head>
+<body>
+    <div class="container">
+        
+            <input name="" id="display" readonly>
+    
+        <div class="keys">
+            <button onclick="addToDisplay('+')">+</button>
+            <button type="button" class="btn" onclick="addToDisplay('7')">7</button>
+            <button type="button" class="btn" onclick="addToDisplay('8')">8</button>
+            <button type="button" class="btn" onclick="addToDisplay('9')">9</button>
+            <button type="button" class="special" onclick="addToDisplay('-')">-</button>
+            <button type="button" class="btn" onclick="addToDisplay('4')">4</button>
+            <button type="button" class="btn" onclick="addToDisplay('5')">5</button>
+            <button type="button" class="btn" onclick="addToDisplay('6')">6</button>
+            <button type="button" class="special" onclick="addToDisplay('x')">x</button>
+            <button type="button" class="btn" onclick="addToDisplay('1')">1</button>
+            <button type="button" class="btn" onclick="addToDisplay('2')">2</button>
+            <button type="button" class="btn" onclick="addToDisplay('3')">3</button>
+            <button type="button" class="special" onclick="addToDisplay('/')">/</button>
+            <button type="button" class="special" onclick="addToDisplay('0')">0</button>
+            <button type="button" class="special" onclick="addToDisplay('.')">.</button>
+            <button class="special" onclick=evaluateDisplay()>=</button>
+            <button class="special" onclick="clearDisplay()">C</button>
+
+
+
+        </div>
+    </div>
+</body>
+<script src="calci.js"></script>
+</html>
