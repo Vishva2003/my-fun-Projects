@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Quote</title>
+    <link rel="stylesheet" href="quote.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="img">    <img src="./assets/gym.jpg" alt=""></div>
+
+    <div class="container">
+        <h1>Today Quote</h1>
+        <p class="quotecontent" id="quotes">Loading...</p>
+        <span class="author">Loading...</span>
+        <div class="buttons">
+            <button type="button" id="quoteBtn" onclick="Quote(apiurl)"><i class="ri-chat-quote-line"></i>Quote</button>
+            <button type="button" id="tweetBtn" onclick="tweet()"><i class="ri-twitter-x-line"></i>Tweet</button>
+        </div>
+    </div>
+<script>
+const quote = document.getElementById('quotes');
+const author = document.querySelector('.author');
+const apiurl = 'https://api.quotable.io/quotes/random?maxLength=80';
+
+async function Quote(url){
+    try {
+        let response = await fetch(url);
+        let datas = await response.json();
+        console.log(datas);
+        let data=datas[0];
+        quote.innerHTML = data.content;
+        author.innerHTML = data.author;
+    } catch (error) {
+        console.error('Error fetching the quote:', error);
+        quote.innerHTML = 'Failed to fetch quote.';
+        author.innerHTML = '';
+    }
+}
+
+async function tweet(){
+    window.open('https://twitter.com/intent/tweet?text='+quote.innerHTML,'Tweeter Window',"menubar=1,resizable=1,width=500,height=250");
+}
+
+Quote(apiurl);
+
+</script>
+</body>
+</html>
