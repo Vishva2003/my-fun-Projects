@@ -1,0 +1,200 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body{
+    background-color: black;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+
+}
+
+.container{
+    height: fit-content;
+    width: fit-content;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px ;
+}
+
+.container button{
+    padding: 10px 30px;
+    background-color: gold;
+    border: none;
+    font-size: large;
+    color: #fff;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.container button:hover{
+    background-color: rgba(255, 217, 0, 0.845);
+
+}
+
+.toastbox{
+    width: 400px;
+    height: fit-content;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+.toast{
+    padding: 20px 20px;
+    font-size: 20px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 20px #000000cc;
+    animation: moveleft 0.5s linear forwards;
+    transform: translateX(100%);
+    overflow: hidden;
+
+}
+
+@keyframes moveleft {
+    100%{
+        transform: translateX(0%);
+    }
+
+    
+}
+
+.toast i{
+    font-size: 20px;
+    margin: 0px 5px;
+    color: green;
+    position: relative;
+}
+
+.error i{
+    color: red;
+}
+
+.invalid i{
+    color: orangered;
+}
+
+.toast::after{
+    content: '';
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    background-color: green;
+    animation: anime 5s linear forwards;
+}
+@keyframes anime {
+    100%{
+        width: 0px;
+    }
+    
+}
+
+.toast.error::after{
+    background-color: red;
+}
+.toast.invalid::after{
+    background-color: orangered;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        padding: 40px;
+    }
+
+    .toastbox {
+        width: 200px;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .toast {
+        padding: 15px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 992px) {
+    body{
+        padding: 20px;
+    }
+    .container {
+        padding: 30px;
+        gap: 20px;
+    }
+
+    .toastbox {
+        right: 10px;
+    }
+
+    .toast {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .container button {
+        padding: 10px 20px;
+        font-size: medium;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .toastbox {
+        width: 40%;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .toast {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .container button {
+        padding: 8px 20px;
+        font-size: medium;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 10px;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .toastbox {
+        width: fit-content;
+
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .toast {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .container button {
+        padding: 6px 15px;
+        font-size: small;
+    }
+}

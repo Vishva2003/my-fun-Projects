@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toast Notify</title>
+    <link rel="stylesheet" href="./toastnotify.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+
+</head>
+<body>
+    <div class="container">
+        <button type="button" id="success" onclick="showToast(btnS)">Success</button>
+        <button type="button" id="invalid" onclick="showToast(btnI)">Invalid</button>
+        <button type="button" id="error" onclick="showToast(btnE)">Error</button>
+    </div>
+    <div class="toastbox">
+    </div>
+
+<script>
+const toastbox =document.querySelector('.toastbox');
+let btnS = '<i class="ri-checkbox-circle-fill"></i> Successfully Submitted';
+let btnI = '<i class="ri-error-warning-fill"></i> Invalid input, Check again';
+let btnE = '<i class="ri-close-circle-fill"></i> Error occured';
+
+
+function showToast(msg){
+    let toast = document.createElement('div');
+    toast.classList.add('toast');
+    toast.innerHTML=msg;
+    toastbox.appendChild(toast);
+
+    if(msg.includes('Error')){
+        toast.classList.add('error');
+    }
+
+    if(msg.includes('Check')){
+        toast.classList.add('invalid');
+    }
+
+    setTimeout(()=>{
+        toast.remove();
+    },5000)
+}
+
+
+</script>
+</body>
+</html>
