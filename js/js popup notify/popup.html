@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop up</title>
+    <link rel="stylesheet" href="popup.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+
+</head>
+<body>
+    <button type="button" class="btn" onclick="openpop()">submit</button>
+    <div class="container">
+        <img src="./images/checkbox-circle-fill.png" alt="">
+        <h3>Thanks You!</h3>
+        <p>Your details has been Successfully Submitted, Thanks</p>
+        <button type="button" onclick="closepop()">OK</button>
+    </div>
+<script>
+let container = document.querySelector('.container');
+function openpop(){
+    container.classList.add('openpop');
+}
+
+function closepop(){
+    container.classList.remove('openpop');
+}
+
+</script>
+</body>
+</html>
