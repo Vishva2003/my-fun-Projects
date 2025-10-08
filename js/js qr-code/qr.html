@@ -27,7 +27,7 @@ img.src=`./images/${number}.gif`;
 
 function qr(){
     if (input.value.length>0){
-        let response= 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data='+input;
+        let response= 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data='+input.value;
         img.src = response;
         img.style.border='none'
         
